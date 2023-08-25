@@ -1,9 +1,9 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-
-const mongoose = require('mongoose')
+const db = require('./db')
 const Student = require('./Models/studentModel')
+
 const port = 3000
 
 app.use(cors())
@@ -71,16 +71,6 @@ app.delete('/students/:id', async (req, res) => {
   }
 })
 
-mongoose
-  .connect(
-    'mongodb+srv://maimamirza:admin@cluster0.ggjwj3g.mongodb.net/NODE-API?retryWrites=true&w=majority'
-  )
-  .then(() => {
-    console.log('Connected to MongoDB')
-    app.listen(port, () => {
-      console.log('Server Running')
-    })
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+app.listen(port, () => {
+  console.log('Server Running')
+})
