@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node server.js",
-    "start": "concurrently \"npm run start-auth\" \"npm run start-server\"",
-    "start-server": "nodemon server.js",
-    "start-auth": "nodemon auth.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
